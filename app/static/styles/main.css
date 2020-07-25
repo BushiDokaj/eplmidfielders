@@ -1,0 +1,30 @@
+body {
+    background-color: snow;
+    color: black;
+}
+
+.navbar {
+    background-color: #39003c;
+}
+
+.nav-link {
+    color: snow;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+#me {
+    width: 200px;
+    height: 200px;
+    transform: rotate();
+}
+
+#logo {
+    width: 220px;
+    height: 100px;
+}
