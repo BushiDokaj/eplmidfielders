@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid">
+    <br>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <h1 class="display-3 text-center">The Premier League's Greatest Midfielders</h1>
+            <br>
+            <p class="font-weight-light text-justify double-space">
+                In 2017 the BBC Sport YouTube channel released 
+                <a class="link text-decoration-none" href="https://www.youtube.com/watch?v=7hOaSFP3n0A&t=943s" target="_blank">"Match of the Day's Premier League all-time XI"</a>,
+                a video in which Alan Shearer, Ian Wright, Danny Murphy and Gary Lineker attempt to name the best ever Premier League starting 11. 
+                In the video, when tasked with choosing two central midfielders for their squad, the footballers considered for the honour are:
+            </p>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-2">
+            <ul class="font-weight-light" style="list-style-type: disc;">
+                <li>Roy Keane</li>
+                <li>Patrick Vieira</li>
+                <li>Frank Lampard</li>
+            </ul>
+        </div>
+        <div class="col-lg-2">
+            <ul class="font-weight-light" style="list-style-type: disc;">
+                <li>Stephen Gerrard</li>
+                <li>N'Golo Kanté</li>
+                <li>Xabi Alonso</li>
+            </ul>
+        </div>
+        <div class="col-lg-2">
+            <ul class="font-weight-light" style="list-style-type: disc;">
+                <li>Paul Scholes</li>
+                <li>Yaya Touré</li>
+                <li>Bryan Robson</li>
+            </ul>
+        </div>
+        <div class="col-lg-5"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <p class="font-weight-light text-justify double-space">Unfortunately, because this happened in 2017, some incredeble current players were 
+                left out of this list, including Kevin De Bruyne and David Silva. Still, the BBC pundits, all former legends of the game, were able to
+                use their expertise to assess the players and pick who they believe are the best two. As an engineering student, 
+                without the the same football experience, I thought it would be interesting to attempt to use statistics as a means for tackling 
+                this problem.
+            </p>
+            <p class="font-weight-light text-justify double-space">Prior to 2006, the Premier League collected very little data. For this reason, Patrick Vieira,
+                 Roy Keane, and Bryan Robson, all of whom had either retired or left the league by then, could not be included in this analysis for lack of data.
+                 While Bryan Robson was a brilliant footballer, he only played a small part at the end of his career in the Premier League.
+                 Keane and Vieira, however, both played massive roles in the success of their teams. Keane was the captain of a United team that
+                 that dominated the league for years. Vieira was the captain of an incredible Arsenal team who managed to go invincible. Paul Scholes will also be
+                 harmed by the lack of data prior to 2006 as most of his best years were before then. Fortunately, Scholes played well into his 30's, giving us enough
+                 data to include him. 
+            </p>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-4" style="padding-bottom: 80px;">
+            <div class="card bg-light shadow zoom">
+                <img src="/static/images/lampard.jpg" class="card-img-top" style="height: 300px;">
+                <div class="card-body">
+                    <h5 class="card-title font-weight-light">
+                        FRANK LAMPARD
+                    </h5>
+                    <p class="card-text font-weight-light text-justify">Frank Lampard was one of the most prolific attacking
+                         midfielders in the Premier League era. His sheer offensive output rivals that of elite strikers. 
+                         He will always be remembered as one of the greatest midfielders England has ever produced. 
+                    </p>
+                    <a class="btn btn-dark" href="#frank_lampard">Player Profile <i class="fas fa-angle-double-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4" style="padding-bottom: 80px;">
+            <div class="card bg-light shadow zoom">
+                <img src="/static/images/gerrard.jpg" class="card-img-top" style="height: 300px;">
+                <div class="card-body">
+                    <h5 class="card-text font-weight-light">
+                        STEPHEN GERRARD
+                    </h5>
+                    <p class="card-text font-weight-light text-justify">Gerrard was the complete midfielder. A player who could score, defend, 
+                        spread the ball and dictate the play. The Liverpool skipper will forever be remembered at Anfield as a truly
+                         world class footballer. His love  for, and dedication to the city of Liverpool has cemented his role as a club legend.
+                    </p>
+                    <a class="btn btn-dark" href="#steven_gerrard">Player Profile <i class="fas fa-angle-double-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4" style="padding-bottom: 80px;">
+            <div class="card bg-light shadow zoom">
+                <img src="/static/images/ngolo.jpg" class="card-img-top" style="height: 300px;">
+                <div class="card-body">
+                    <h5 class="card-text font-weight-light">
+                        N'GOLO KANTÉ
+                    </h5>
+                    <p class="card-text font-weight-light text-justify">N'Golo Kanté is the only player on this list who 
+                        still plays in the Premier League today. A crucial piece in the Leicester team that won the title in 2015, 
+                        he then went on to win a second Premier League at Chelsea. Kanté is undoubtedly one of the best defensive midfielders today.
+                    </p>
+                    <a class="btn btn-dark" href="#ngolo_kante">Player Profile <i class="fas fa-angle-double-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4" style="padding-bottom: 80px;">
+            <div class="card bg-light shadow zoom">
+                <img src="/static/images/xabi.jpg" class="card-img-top" style="height: 300px;">
+                <div class="card-body">
+                    <h5 class="card-text font-weight-light">
+                        XABI ALONSO
+                    </h5>
+                    <p class="card-text font-weight-light text-justify">Standing alongside Gerrard in a Liverpool side that made 
+                        two Champion's League Finals and won one, was Xabi Alonso. Depending on the system, Xabi could play as a 6 or
+                         an 8 and do both at the highest level. He was a world class midfielder, deserving of his spot on this list.
+                    </p>
+                    <a class="btn btn-dark" href="#xabi_alonso">Player Profile <i class="fas fa-angle-double-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4" style="padding-bottom: 80px;">
+            <div class="card bg-light shadow zoom">
+                <img src="/static/images/scholes.jpg" class="card-img-top" style="height: 300px;">
+                <div class="card-body">
+                    <h5 class="card-text font-weight-light">
+                        PAUL SCHOLES
+                    </h5>
+                    <p class="card-text font-weight-light text-justify">Paul Scholes was the midfield maestro at Manchester United.
+                         He completed passes that only a handful of players could do. Scholes was a key piece of the United
+                         dynasty that dominated the Premier League from its inception up until his departure along with Alex Ferguson in 2013.
+                    </p>
+                    <a class="btn btn-dark" href="#paul_scholes">Player Profile <i class="fas fa-angle-double-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4" style="padding-bottom: 80px;">
+            <div class="card bg-light shadow zoom">
+                <img src="/static/images/toure.jpg" class="card-img-top" style="height: 300px;">
+                <div class="card-body">
+                    <h5 class="card-text font-weight-light">
+                        YAYA TOURÉ
+                    </h5>
+                    <p class="card-text font-weight-light text-justify">Yaya Touré was an elite midfielder who played for the top 
+                        clubs in Europe, including Manchester City. The Ivorian won three league titles with City. Touré is another
+                         example of the complete midfielder. He was a 6 with the ability to drive forward and score goals as well.
+                    </p>
+                    <a class="btn btn-dark" href="#yaya_toure">Player Profile <i class="fas fa-angle-double-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

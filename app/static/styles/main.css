@@ -1,3 +1,22 @@
+.navbar{
+    box-shadow: 0px 12px 10px -5px rgba(0,0,0,.5);
+}
+
+
+.zoom:hover {
+    transform: scale(1.15);
+    transition-duration: 0.8s;
+}
+
+.card {
+    width: 300px;
+    margin: auto;
+}
+
+.zoom {
+    transition-duration: 0.5s
+}
+
 body {
     background-color: snow;
     color: black;
@@ -7,8 +26,18 @@ body {
     background-color: #39003c;
 }
 
-.nav-link {
+a.nav-link:link, a.nav-link:visited, a.nav-link:hover, a.nav-link:active {
     color: snow;
+    text-decoration: none;
+}
+
+.double-space {
+    line-height: 2;
+}
+
+.nav-item {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .center {
@@ -25,6 +54,6 @@ body {
 }
 
 #logo {
-    width: 220px;
-    height: 100px;
+    width: 112px;
+    height: 65px;
 }

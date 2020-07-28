@@ -12,14 +12,14 @@
     <title>Analysis of Premier League Centre-Midfielders</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-md fixed-top">
         <a class="navbar-brand" href="home">
-            <img id="logo" src="static/images/epl_logo.png" alt="logo" class="img-fluid">
+            <img id="logo" src="static/images/epl_logo.jpg" alt="logo" class="img-fluid">
         </a>
         <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" href="home"><i class="fas fa-home"></i> Home</a></li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"><i class="fas fa-user"></i> Player Analysis</a> 
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"><i class="fas fa-user"></i> Player Profile</a> 
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#frank_lampard">Frank Lampard</a>
                     <a class="dropdown-item" href="#steven_gerrard">Steven Gerrard</a>
@@ -29,19 +29,17 @@
                     <a class="dropdown-item" href="#xabi_alonso">Xabi Alonso</a>
                 </div>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#statistical_comparison"><i class="fas fa-chart-line"></i> Statistical Comparison</a></li>
+            <li class="nav-item"><a class="nav-link" href="#statistical_comparison"><i class="fas fa-chart-line"></i> Statistical Analysis</a></li>
         </ul>
     </nav>
+    <div style="margin-top: 130px;"></div>
     {% block content %}
     {% endblock %}
     <footer>
         <div class="container-fluid">
             <hr>
             <div class="row">
-                <div class="col-lg-3">
-                    <br>
-                    <img id="me" src="/static/images/me.jpg" class="center rounded">
-                </div>
+                <div class="col-lg-1"></div>
                 <div class="col-lg-5">
                     <br>
                     <p class="font-weight-light text-justify">
@@ -49,16 +47,21 @@
                         University of Toronto. I am looking to pursue a career at the intersection of business
                         and technology as a consultant, developer, or data scientist. Thank you for visiting my site.
                     </p>
+                    <br>
+                    <p class="font-weight-light text-justify">All of the data needed for this project was retrieved from the <a class="link text-decoration-none" href="https://www.premierleague.com/" target="_blank">Premier League</a> website.</p> 
                 </div>
-                <div class="col-lg-4">
-                    <h4><small>Contact Me</small></h4>
-                    <br>
-                    <p><i class="fab fa-linkedin-in fa-lg"></i> <a class="link" href="https://www.linkedin.com/in/kujtim-dokaj/" target="_blank">Kujtim Dokaj</a></p>
-                    <br>
-                    <p><i class="fab fa-github-square fa-lg"></i> <a class="link" href="https://github.com/BushiDokaj" target="_blank">BushiDokaj</a></p>
-                    <br>
-                    <p><i class="fas fa-envelope fa-lg"></i> kujtim.dokaj@mail.utoronto.ca</p>
+                <div class="col-lg-5" style="padding-left: 100px;">
+                    <div id="contact-me">
+                        <h4><small>Contact Me</small></h4>
+                        <br>
+                        <p><i class="fab fa-linkedin-in fa-lg"></i> <a class="link text-decoration-none" href="https://www.linkedin.com/in/kujtim-dokaj/" target="_blank">Kujtim Dokaj</a></p>
+                        <br>
+                        <p><i class="fab fa-github-square fa-lg"></i> <a class="link text-decoration-none" href="https://github.com/BushiDokaj" target="_blank">BushiDokaj</a></p>
+                        <br>
+                        <p><i class="fas fa-envelope fa-lg"></i> kujtim.dokaj@mail.utoronto.ca</p>
+                    </div>
                 </div>
+                <div class="col-lg-1"></div>
             </div>
         </div>
     </footer>

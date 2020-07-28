@@ -5,4 +5,4 @@ import pandas as pd
 @app.route('/', methods=["GET"])
 @app.route('/home', methods=["GET"])
 def home():
-    return render_template('base.html')
+    return render_template('home.html')
