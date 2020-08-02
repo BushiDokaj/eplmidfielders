@@ -2,10 +2,15 @@
     box-shadow: 0px 12px 10px -5px rgba(0,0,0,.5);
 }
 
-
 .zoom:hover {
     transform: scale(1.15);
     transition-duration: 0.8s;
+}
+
+.profile {
+    margin: auto;
+    width: 400px;
+    height: 300px;
 }
 
 .card {

@@ -1,6 +1,6 @@
-,appearances,goals,wins,losses,goals_per_game,att_pen_goal,att_freekick_goal,total_scoring_att,ontarget_scoring_att,goal_assist,total_pass,total_pass_per_game,big_chance_created,total_cross,cross_accuracy,total_through_ball,accurate_long_balls,tackle_success,total_tackle,blocked_scoring_att,interception,total_clearance,ball_recovery,duel_won,duel_lost,won_contest,aerial_won,aerial_lost,error_lead_to_goal,Year
-0,24,2,11,8,0.08,0,0,0,0,4,0,0.00,0,0,0%,0,0,0%,0,0,0,0,0,0,0,0,0,0,0,2004/05
-1,35,3,22,6,0.09,0,0,0,0,7,0,0.00,0,0,0%,0,0,0%,0,0,0,0,0,0,0,0,0,0,0,2005/06
-2,32,4,17,9,0.13,1,0,51,16,1,"2,023",63.22,0,33,21%,0,270,81%,132,12,36,43,0,227,158,7,36,21,0,2006/07
-3,19,2,12,2,0.11,0,1,26,5,1,995,52.37,0,32,28%,3,125,69%,72,8,42,45,164,121,88,5,17,18,0,2007/08
-4,33,3,23,2,0.09,1,0,67,15,4,"2,482",75.21,0,96,31%,23,265,70%,89,17,43,53,266,184,135,10,43,32,0,2008/09
+appearances,goals,wins,losses,goals_per_game,att_pen_goal,att_freekick_goal,total_scoring_att,ontarget_scoring_att,goal_assist,total_pass,total_pass_per_game,big_chance_created,total_cross,cross_accuracy,total_through_ball,accurate_long_balls,tackle_success,total_tackle,blocked_scoring_att,interception,total_clearance,ball_recovery,duel_won,duel_lost,won_contest,aerial_won,aerial_lost,error_lead_to_goal,year
+24,2,11,8,0.08,0,0,0,0,4,0,0.00,0,0,0%,0,0,0%,0,0,0,0,0,0,0,0,0,0,0,2004/05
+35,3,22,6,0.09,0,0,0,0,7,0,0.00,0,0,0%,0,0,0%,0,0,0,0,0,0,0,0,0,0,0,2005/06
+32,4,17,9,0.13,1,0,51,16,1,"2,023",63.22,0,33,21%,0,270,81%,132,12,36,43,0,227,158,7,36,21,0,2006/07
+19,2,12,2,0.11,0,1,26,5,1,995,52.37,0,32,28%,3,125,69%,72,8,42,45,164,121,88,5,17,18,0,2007/08
+33,3,23,2,0.09,1,0,67,15,4,"2,482",75.21,0,96,31%,23,265,70%,89,17,43,53,266,184,135,10,43,32,0,2008/09

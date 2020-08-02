@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="jumbotron shadow">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <img class="img-fluid rounded shadow profile" src="{{ url_for('static', filename=img) }}">
+                    </div>
+                    <div class="col-lg-7">
+                        <h1 class="display-3 text-center">{{title}}</h1>
+                        <p class="font-weight-light text-center">Appearances: {{appearances}} | Wins: {{wins}} | Losses: {{losses}}</p>
+                        <p class="font-weight-light text-center">{{accolades}}</p>
+                        <blockquote class="blockquote text-center">
+                            <p class="mb-0 small">"{{quote}}"</p>
+                            <footer class="blockquote-footer"><cite title="Source Title">{{said_it}}</cite></footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <h1 class="text-center display-4">Attacking Data</h1>
+            <hr>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Year</th>
+                            <th>Appearances</th>
+                            <th>Goals</th>
+                            <th>Goals/Match</th>
+                            <th>Penalties Scored</th>
+                            <th>Freekicks Scored</th>
+                            <th>Shots</th>
+                            <th nowrap>Shots on Target</th>
+                            <th>Shooting Accuracy</th>
+                            <th>Shot Conversion Rate</th>
+                            <th>Assists</th>
+                            <th>Assists/Match</th>
+                            <th>Goal Contributions</th>
+                            <th>Goal Contributions/Match</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in attack_data %}
+                        <tr>
+                            <td>{{row.year}}</td>
+                            <td>{{row.appearances}}</td>
+                            <td>{{row.goals}}</td>
+                            <td>{{row.goals_per_game}}</td>
+                            <td>{{row.att_pen_goal}}</td>
+                            <td>{{row.att_freekick_goal}}</td>
+                            <td>{{row.total_scoring_att}}</td>
+                            <td>{{row.ontarget_scoring_att}}</td>
+                            <td>{{row.shooting_accuracy}}</td>
+                            <td>{{row.conversion_rate}}</td>
+                            <td>{{row.goal_assist}}</td>
+                            <td>{{row.assists_per_match}}</td>
+                            <td>{{row.goal_contributions}}</td>
+                            <td>{{row.gc_per_match}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <h1 class="display-4 text-center">Team Play Data</h1>
+            <hr>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Year</th>
+                            <th>Appearances</th>
+                            <th>Passes</th>
+                            <th>Passes/Match</th>
+                            <th>Big Chances Created</th>
+                            <th>Total Crosses</th>
+                            <th>Cross Accuracy</th>
+                            <th>Total Through Balls</th>
+                            <th>Accurate Long Balls</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in team_play_data %}
+                        <tr>
+                            <td>{{row.year}}</td>
+                            <td>{{row.appearances}}</td>
+                            <td>{{row.total_pass}}</td>
+                            <td>{{row.total_pass_per_game}}</td>
+                            <td>{{row.big_chance_created}}</td>
+                            <td>{{row.total_cross}}</td>
+                            <td>{{row.cross_accuracy}}</td>
+                            <td>{{row.total_through_ball}}</td>
+                            <td>{{row.accurate_long_balls}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <h1 class="display-4 text-center">Defensive Data</h1>
+            <hr>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Year</th>
+                            <th>Appearances</th>
+                            <th>Tackles</th>
+                            <th nowrap>Tackle Success Rate</th>
+                            <th>Shots Blocked</th>
+                            <th>Interceptions</th>
+                            <th>Clearances</th>
+                            <th>Recoveries</th>
+                            <th>Duels Won</th>
+                            <th>Duels Lost</th>
+                            <th>Successful 50/50s</th>
+                            <th nowrap>Aerial Battles Won</th>
+                            <th nowrap>Aeiral Battles Lost</th>
+                            <th nowrap>Errors Leading to Goals</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in defensive_data %}
+                        <tr>
+                            <td>{{row.year}}</td>
+                            <td>{{row.appearances}}</td>
+                            <td>{{row.total_tackle}}</td>
+                            <td>{{row.tackle_success}}</td>
+                            <td>{{row.blocked_scoring_att}}</td>
+                            <td>{{row.interception}}</td>
+                            <td>{{row.total_clearance}}</td>
+                            <td>{{row.ball_recovery}}</td>
+                            <td>{{row.duel_won}}</td>
+                            <td>{{row.duel_lost}}</td>
+                            <td>{{row.won_contest}}</td>
+                            <td>{{row.aerial_won}}</td>
+                            <td>{{row.aerial_lost}}</td>
+                            <td>{{row.error_lead_to_goal}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>
+{% endblock %}

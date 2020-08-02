@@ -1,6 +1,6 @@
-,appearances,goals,wins,losses,goals_per_game,att_pen_goal,att_freekick_goal,total_scoring_att,ontarget_scoring_att,goal_assist,total_pass,total_pass_per_game,big_chance_created,total_cross,cross_accuracy,total_through_ball,accurate_long_balls,tackle_success,total_tackle,blocked_scoring_att,interception,total_clearance,ball_recovery,duel_won,duel_lost,won_contest,aerial_won,aerial_lost,error_lead_to_goal,Year
-0,37,1,23,3,0.03,0,0,21,5,4,"1,449",39.16,4,17,29%,7,63,71%,175,3,156,57,326,277,217,47,38,57,0,2015/16
-1,35,1,27,5,0.03,0,0,27,7,1,"2,122",60.63,2,10,10%,8,136,65%,127,10,82,41,275,197,180,36,19,41,0,2016/17
-2,34,1,19,8,0.03,0,0,25,5,1,"2,150",63.24,4,13,15%,9,89,68%,113,14,85,26,312,191,179,47,17,32,0,2017/18
-3,36,4,20,8,0.11,0,0,29,6,4,"2,021",56.14,4,19,32%,4,35,55%,74,13,44,26,238,146,200,32,27,41,0,2018/19
-4,22,3,8,10,0.14,0,0,18,6,0,"1,134",51.55,1,26,42%,0,40,45%,44,6,44,31,158,96,138,24,19,32,2,2019/20
+appearances,goals,wins,losses,goals_per_game,att_pen_goal,att_freekick_goal,total_scoring_att,ontarget_scoring_att,goal_assist,total_pass,total_pass_per_game,big_chance_created,total_cross,cross_accuracy,total_through_ball,accurate_long_balls,tackle_success,total_tackle,blocked_scoring_att,interception,total_clearance,ball_recovery,duel_won,duel_lost,won_contest,aerial_won,aerial_lost,error_lead_to_goal,year
+37,1,23,3,0.03,0,0,21,5,4,"1,449",39.16,4,17,29%,7,63,71%,175,3,156,57,326,277,217,47,38,57,0,2015/16
+35,1,27,5,0.03,0,0,27,7,1,"2,122",60.63,2,10,10%,8,136,65%,127,10,82,41,275,197,180,36,19,41,0,2016/17
+34,1,19,8,0.03,0,0,25,5,1,"2,150",63.24,4,13,15%,9,89,68%,113,14,85,26,312,191,179,47,17,32,0,2017/18
+36,4,20,8,0.11,0,0,29,6,4,"2,021",56.14,4,19,32%,4,35,55%,74,13,44,26,238,146,200,32,27,41,0,2018/19
+22,3,8,10,0.14,0,0,18,6,0,"1,134",51.55,1,26,42%,0,40,45%,44,6,44,31,158,96,138,24,19,32,2,2019/20

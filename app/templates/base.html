@@ -13,20 +13,20 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-md fixed-top">
-        <a class="navbar-brand" href="home">
-            <img id="logo" src="static/images/epl_logo.jpg" alt="logo" class="img-fluid">
+        <a class="navbar-brand" href="{{ url_for('home') }}">
+            <img id="logo" src="{{ url_for('static', filename='images/epl_logo.jpg') }}" alt="logo" class="img-fluid">
         </a>
         <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="home"><i class="fas fa-home"></i> Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}"><i class="fas fa-home"></i> Home</a></li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"><i class="fas fa-user"></i> Player Profile</a> 
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"><i class="far fa-address-card"></i> Player Profile</a> 
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#frank_lampard">Frank Lampard</a>
-                    <a class="dropdown-item" href="#steven_gerrard">Steven Gerrard</a>
-                    <a class="dropdown-item" href="#paul_scholes">Paul Scholes</a>
-                    <a class="dropdown-item" href="#ngolo_kante">N'Golo Kanté</a>
-                    <a class="dropdown-item" href="#yaya_toure">Yaya Touré</a>
-                    <a class="dropdown-item" href="#xabi_alonso">Xabi Alonso</a>
+                    <a class="dropdown-item" href="{{ url_for('profile', player='frank_lampard') }}">Frank Lampard</a>
+                    <a class="dropdown-item" href="{{ url_for('profile', player='steven_gerrard') }}">Steven Gerrard</a>
+                    <a class="dropdown-item" href="{{ url_for('profile', player='paul_scholes') }}">Paul Scholes</a>
+                    <a class="dropdown-item" href="{{ url_for('profile', player='ngolo_kante') }}">N'Golo Kanté</a>
+                    <a class="dropdown-item" href="{{ url_for('profile', player='yaya_toure') }}">Yaya Touré</a>
+                    <a class="dropdown-item" href="{{ url_for('profile', player='xabi_alonso') }}">Xabi Alonso</a>
                 </div>
             </li>
             <li class="nav-item"><a class="nav-link" href="#statistical_comparison"><i class="fas fa-chart-line"></i> Statistical Analysis</a></li>

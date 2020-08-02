@@ -1,0 +1,38 @@
+{
+    "frank_lampard": [
+        "Frank Lampard",
+        "Premier League ×3 | FA Cup ×4 | League Cup ×2 | UEFA Champions League | UEFA Europa League",
+        ["I simply cannot not pick Frank Lampard", "Ian Wright"],
+        "Frank-Lampard.csv"
+    ],
+    "steven_gerrard": [
+        "Steven Gerrard",
+        "FA Cup ×2 | League Cup ×3 | UEFA Champions League",
+        ["His story is one of those stories to be told, one of those fairytales – just like it happened to me – to be narrated to your children and grandchildren.", "Paolo Maldini"],
+        "Steven-Gerrard.csv"
+    ],
+    "paul_scholes": [
+        "Paul Scholes",
+        "Premier League ×11 | FA Cup ×3 | League Cup ×2 | UEFA Champions League ×2",
+        ["In the last 15 to 20 years the best central midfielder that I have seen — the most complete — is Scholes.", "Xavi Hernandez"],
+        "Paul-Scholes.csv"
+    ],
+    "ngolo_kante": [
+        "N'Golo Kanté",
+        "Premier League ×2 | FA Cup | UEFA Europa League | FIFA World Cup",
+        ["People talk about the Makélélé position, but I am old, and it is time everybody called it the Kanté position.", "Claude Makélélé"],
+        "Ngolo-Kante.csv"
+    ],
+    "yaya_toure": [
+        "Yaya Touré",
+        "Premier League ×3 | FA Cup | League Cup ×2",
+        ["If there's ever going to be a legend at this club then it's this man.", "Vincent Kompany"],
+        "Yaya-Toure.csv"
+    ],
+    "xabi_alonso": [
+        "Xabi Alonso",
+        "FA Cup | UEFA Champions League",
+        ["He was, by some distance, the best central midfielder I ever played alongside.", "Steven Gerrard"],
+        "Xabi-Alonso.csv"
+    ]
+}
