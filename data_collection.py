@@ -86,7 +86,7 @@ for player, years in players.items():
         
         data.append(row)
 
-    table = pd.DataFrame(data, columns=stats)
+    table = pd.DataFrame(data, columns=stats, index=years)
     table['year'] = years
     table.to_csv(r'player_data\\'+player+'.csv', index=False)
 

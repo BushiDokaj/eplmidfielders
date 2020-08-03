@@ -1,6 +1,7 @@
 from app import app
 from flask import render_template, request, jsonify, make_response, redirect, url_for, session
 import pandas as pd
+import numpy as np
 import json
 
 player_prof = None
@@ -28,14 +29,15 @@ def profile(player):
     wins = sum(player_data['wins'])
     losses = sum(player_data['losses'])
 
-    attack_data = player_data.loc[:,('appearances', 'goals', 'goals_per_game', 'att_pen_goal', 'att_freekick_goal', 'total_scoring_att',
-                                'ontarget_scoring_att', 'goal_assist', 'year')]
+    attack_data = player_data.loc[:,('appearances', 'goals', 'goals_per_game', 'total_scoring_att', 'ontarget_scoring_att', 'goal_assist', 'year')]
     attack_data['shooting_accuracy'] = 100*(attack_data.loc[:,('ontarget_scoring_att')].divide(attack_data.loc[:,('total_scoring_att')]))
     attack_data['conversion_rate'] = 100*(attack_data.loc[:,('goals')].divide(attack_data.loc[:,('total_scoring_att')]))
     attack_data['assists_per_match'] = attack_data.loc[:,('goal_assist')].divide(player_data.loc[:,('appearances')])
     attack_data['goal_contributions'] = attack_data.loc[:,('goals')].add(attack_data.loc[:,('goal_assist')])
     attack_data['gc_per_match'] = attack_data.loc[:,('goal_contributions')].divide(player_data.loc[:,('appearances')])
-
+    attack_data = attack_data.replace([np.inf, -np.inf], np.nan)
+    attack_data.fillna(value=0, inplace=True)
+    
     team_play_data = player_data.loc[:,('appearances', 'total_pass', 'total_pass_per_game', 'big_chance_created', 'total_cross', 'cross_accuracy',
                                     'total_through_ball', 'accurate_long_balls', 'year')]
 
@@ -43,6 +45,6 @@ def profile(player):
                                     'duel_won', 'duel_lost', 'won_contest', 'aerial_won', 'aerial_lost', 'error_lead_to_goal', 'year')]
 
 
-    return render_template('profile.html', title=title, accolades=accolades, quote=quote[0], said_it=quote[1], 
+    return render_template('profile.html',player=player, title=title, accolades=accolades, quote=quote[0], said_it=quote[1], 
                             img=img, appearances=appearances, wins=wins, losses=losses, attack_data=attack_data.to_dict('record'),
                             team_play_data=team_play_data.to_dict('record'), defensive_data=defensive_data.to_dict('record'))

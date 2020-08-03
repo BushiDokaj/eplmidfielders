@@ -27,18 +27,28 @@
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-lg-10">
+            <p class="font-weight-light text-justified">* Team play and defensive data prior to the 2006/07 
+                season is not available. Attack data is limited.
+            </p>
+            <p class="font-weight-light text-justified">Click here to download the raw data file containing all
+                 the data below in csv format.
+            </p>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="row" style="padding-bottom: 80px;">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
             <h1 class="text-center display-4">Attacking Data</h1>
             <hr>
-            <div class="table-responsive">
-                <table class="table table-striped table-hover">
+            <div class="shadow">
+                <table class="table table-striped table-bordered table-hover scroll_table text-center" cellspacing="0" width="100%">
                     <thead class="thead-dark">
                         <tr>
                             <th>Year</th>
                             <th>Appearances</th>
                             <th>Goals</th>
                             <th>Goals/Match</th>
-                            <th>Penalties Scored</th>
-                            <th>Freekicks Scored</th>
                             <th>Shots</th>
                             <th nowrap>Shots on Target</th>
                             <th>Shooting Accuracy</th>
@@ -56,8 +66,6 @@
                             <td>{{row.appearances}}</td>
                             <td>{{row.goals}}</td>
                             <td>{{row.goals_per_game}}</td>
-                            <td>{{row.att_pen_goal}}</td>
-                            <td>{{row.att_freekick_goal}}</td>
                             <td>{{row.total_scoring_att}}</td>
                             <td>{{row.ontarget_scoring_att}}</td>
                             <td>{{row.shooting_accuracy}}</td>
@@ -76,24 +84,24 @@
     </div>
     <br>
     <br>
-    <div class="row">
+    <div class="row" style="padding-bottom: 80px;">
         <div class="col-lg-1"></div>
         <div class="col-lg-10">
             <h1 class="display-4 text-center">Team Play Data</h1>
             <hr>
-            <div class="table-responsive">
-                <table class="table table-striped table-hover">
+            <div class="shadow">
+                <table class="table table-striped table-bordered table-hover scroll_table text-center" cellspacing="0" width="100%">
                     <thead class="thead-dark">
                         <tr>
                             <th>Year</th>
                             <th>Appearances</th>
                             <th>Passes</th>
                             <th>Passes/Match</th>
-                            <th>Big Chances Created</th>
+                            <th nowrap>Big Chances Created</th>
                             <th>Total Crosses</th>
                             <th>Cross Accuracy</th>
-                            <th>Total Through Balls</th>
-                            <th>Accurate Long Balls</th>
+                            <th>Through Balls</th>
+                            <th nowrap>Accurate Long Balls</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -118,13 +126,13 @@
     </div>
     <br>
     <br>
-    <div class="row">
+    <div class="row" style="padding-bottom: 80px;">
         <div class="col-lg-1"></div>
         <div class="col-lg-10">
             <h1 class="display-4 text-center">Defensive Data</h1>
             <hr>
-            <div class="table-responsive">
-                <table class="table table-striped table-hover">
+            <div class="shadow">
+                <table class="table table-striped table-bordered table-hover scroll_table text-center" cellspacing="0" width="100%">
                     <thead class="thead-dark">
                         <tr>
                             <th>Year</th>
