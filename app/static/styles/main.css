@@ -1,10 +1,50 @@
 .navbar{
     box-shadow: 0px 12px 10px -5px rgba(0,0,0,.5);
+    background-color: #39003c;
+}
+
+.nav-item {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .zoom:hover {
     transform: scale(1.15);
     transition-duration: 0.8s;
+}
+
+.zoom {
+    transition-duration: 0.5s
+}
+
+.card-text {
+    border-top-style: solid;
+    border-top-width: 5px;
+    border-image: linear-gradient(to right, #983cfd, #ff2882);
+    border-image-slice: 1;
+    padding-top: 2px;
+}
+
+.des-stat {
+    border-top-style: solid;
+    border-top-color: #39003c;
+    border-top-width: 5px;
+    border-bottom-style: solid;
+    border-bottom-color: #983cfd;
+    border-bottom-width: 5px;
+    padding: 5px;
+    /* border-top-style: solid;
+    border-top-width: 6px;
+    border-bottom-style: solid;
+    border-bottom-width: 6px;
+    border-bottom-color: #39003c;
+    border-image: linear-gradient(to right, #983cfd, #39003c);
+    border-image-slice: 1; */
+    margin-bottom: 5px;
+}
+
+.dsc-title:hover {
+    text-decoration: underline;
 }
 
 .profile {
@@ -18,17 +58,9 @@
     margin: auto;
 }
 
-.zoom {
-    transition-duration: 0.5s
-}
-
 body {
     background-color: snow;
     color: black;
-}
-
-.navbar {
-    background-color: #39003c;
 }
 
 a.nav-link:link, a.nav-link:visited, a.nav-link:hover, a.nav-link:active {
@@ -38,11 +70,6 @@ a.nav-link:link, a.nav-link:visited, a.nav-link:hover, a.nav-link:active {
 
 .double-space {
     line-height: 2;
-}
-
-.nav-item {
-    padding-left: 10px;
-    padding-right: 10px;
 }
 
 .center {
@@ -59,8 +86,8 @@ a.nav-link:link, a.nav-link:visited, a.nav-link:hover, a.nav-link:active {
 }
 
 #logo {
-    width: 112px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
 }
 
 .dtHorizontalVerticalExampleWrapper {
