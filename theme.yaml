@@ -1,0 +1,7 @@
+attrs:
+    Figure:
+        toolbar_location: above
+        height: 450
+        width: 1000
+    Grid:
+        grid_line_dash: [6, 4]

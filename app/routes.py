@@ -1,10 +1,15 @@
 from app import app
-from flask import render_template, request, jsonify, make_response, redirect, url_for, session
+from flask import render_template, request, jsonify, make_response, redirect, url_for, session, Markup
 from scipy import stats
 import pandas as pd
 import numpy as np
 import json
 from math import sqrt
+from data_visualizations import bk_goals
+from bokeh.server.server import Server
+from bokeh.embed import server_document
+from threading import Thread
+from tornado.ioloop import IOLoop
 
 player_prof = None
 with open('app\player_profiles.json', 'r', encoding='utf-8') as prof_file:
@@ -76,9 +81,9 @@ def profile(player):
     "avg_gc": round(attack_data['goal_contributions'].mean(), 1),
     "max_gc": attack_data['goal_contributions'].max(),
     "ci_gc": confidence_interval(attack_data['goal_contributions'], 0.9),
-    "avg_cr": round(attack_data['conversion_rate'].str.replace('%','').astype('int').mean(), 1),
-    "max_cr": attack_data['conversion_rate'].str.replace('%','').astype('int').max(),
-    "ci_cr": confidence_interval(attack_data['conversion_rate'].str.replace('%','').astype('int'), 0.9),
+    "avg_cr": round(attack_data[attack_data.year >= "2006/07"]['conversion_rate'].str.replace('%','').astype('int').mean(), 1),
+    "max_cr": attack_data[attack_data.year >= "2006/07"]['conversion_rate'].str.replace('%','').astype('int').max(),
+    "ci_cr": confidence_interval(attack_data[attack_data.year >= "2006/07"]['conversion_rate'].str.replace('%','').astype('int'), 0.9),
     # descriptive team play statistics
     "avg_ppg": round(team_play_data['total_pass_per_game'].mean(), 1),
     "max_ppg": team_play_data['total_pass_per_game'].max(),
@@ -111,6 +116,20 @@ def profile(player):
                             img=img, appearances=appearances, wins=wins, losses=losses, attack_data=attack_data.to_dict('record'),
                             team_play_data=team_play_data.to_dict('record'), defensive_data=defensive_data.to_dict('record'),
                             desc_stats=desc_stats)
+
+@app.route('/statistical_analysis', methods=['GET'])
+def statistical_analysis():
+    script = server_document('http://localhost:5006/bk_goals')
+    return render_template("stats_analysis.html", script=Markup(script), template="Flask")
+
+def bk_worker():
+    # Can't pass num_procs > 1 in this configuration. If you need to run multiple
+    # processes, see e.g. flask_gunicorn_embed.py
+    server = Server({'/bk_goals': bk_goals}, io_loop=IOLoop(), allow_websocket_origin=["localhost:500"])
+    server.start()
+    server.io_loop.start()
+
+Thread(target=bk_worker).start()
 
 @app.route('/download/<player>', methods=["GET"])
 def download(player):

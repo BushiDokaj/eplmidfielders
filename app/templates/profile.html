@@ -1,5 +1,66 @@
 {% extends 'base.html' %}
 {% block content %}
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+<div class="modal-dialog">
+    <div class="modal-content">
+
+    <!-- Modal Header -->
+    <div class="modal-header">
+        <h4 class="modal-title">Data Dictionary</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+    </div>
+
+    <!-- Modal body -->
+    <div class="modal-body">
+        <h4>Statistics</h4>
+        <span class="font-weight-bolder">Mean: <p class="font-weight-lighter">The average value of the given data</p></span>
+        <span class="font-weight-bolder">Max: <p class="font-weight-lighter">The greates value in a given set of data points.</p></span>
+        <span class="font-weight-bolder">90% CI: <p class="font-weight-lighter">A confidence interval. We can be 90% certain, for the given data category, that the player will score within this range.</p></span>
+        <br>
+        <h4>Data</h4>
+        <span class="font-weight-bolder">Year: <p class="font-weight-lighter">The Premier League season.</p></span>
+        <span class="font-weight-bolder">Appearances: <p class="font-weight-lighter">The number of games a player featured in that season.</p></span>
+        <span class="font-weight-bolder">Goals: <p class="font-weight-lighter">The number of goals a player scores in a season.</p></span>
+        <span class="font-weight-bolder">Goals Per Match: <p class="font-weight-lighter">The proportion of goals the player scored to the number of matches they played that season.</p></span>
+        <span class="font-weight-bolder">Assists: <p class="font-weight-lighter">The number of assists a player records in a season.</p></span>
+        <span class="font-weight-bolder">Assists Per Match: <p class="font-weight-lighter">The proportion of assists to the number of matches played.</p></span>
+        <span class="font-weight-bolder">Goal Contributions: <p class="font-weight-lighter">The total number of goals plus assists recorded by a player in a season.</p></span>
+        <span class="font-weight-bolder">Goal Contributions Per Match: <p class="font-weight-lighter">The proportion of goal contribtions to the number of matches played.</p></span>
+        <span class="font-weight-bolder">Shots: <p class="font-weight-lighter">The total number of shots taken by a player in a season. This data is not available prior to the 2006/07 season.</p></span>
+        <span class="font-weight-bolder">Shots on Target: <p class="font-weight-lighter">The total number of shots that taken that were on goal. This data is not available prior to the 2006/07 season.</p></span>
+        <span class="font-weight-bolder">Shot Accuracy: <p class="font-weight-lighter">The percentage of shots a player takes that are on goal. This data is not available prior to the 2006/07 season.</p></span>
+        <span class="font-weight-bolder">Shot Conversion Rate: <p class="font-weight-lighter">The percentage of shots a player takes that lead to a goal. This data is not available prior to the 2006/07 season.</p></span>
+        <span class="font-weight-bolder">Passes: <p class="font-weight-lighter">The total number of passes made by a player in a season. This data is not available prior to the 2006/07 season.</p></span>
+        <span class="font-weight-bolder">Passes Per Match: <p class="font-weight-lighter">The proportion of passes to the number of matches played. This data is not available prior to the 2006/07 season.</p></span>
+        <span class="font-weight-bolder">Big Chances Created: <p class="font-weight-lighter">The number of big chances a player created that season. This data is not available prior to the 2010/11 season.</p></span>
+        <span class="font-weight-bolder">Total Crosses: <p class="font-weight-lighter">The total number of crosses made by a player in a season. This data is not available prior to the 2006/07 season.</p></span>
+        <span class="font-weight-bolder">Cross Accuracy: <p class="font-weight-lighter">The percentage of crosses made by a player that find their target. This data is not available prior to the 2006/07 season.</p></span>
+        <span class="font-weight-bolder">Through Balls: <p class="font-weight-lighter">The total number of through balls made by a player. This data is not available prior to the 2007/08 season.</p></span>
+        <span class="font-weight-bolder">Accurate Long Balls: <p class="font-weight-lighter">The total number of accurate long balls made by a player. This data is not available prior to the 2006/07 season.</p></span>
+        <span class="font-weight-bolder">Tackles: <p class="font-weight-lighter">The total number of tackles a player makes in a season. This data is not available prior to the 2006/07 season.</p></span>
+        <span class="font-weight-bolder">Tackle Success: <p class="font-weight-lighter">The percentage of tackles a player makes that are successful. This data is not available prior to the 2006/07 season.</p></span>
+        <span class="font-weight-bolder">Shots Blocked: <p class="font-weight-lighter">The total number of shots blocked by a player. This data is not available prior to the 2006/07 season.</p></span>
+        <span class="font-weight-bolder">Interceptions: <p class="font-weight-lighter">The total number of interceptions made by a player. This data is not available prior to the 2006/07 season.</p></span>
+        <span class="font-weight-bolder">Clearances: <p class="font-weight-lighter">The total number of clearances made by a player. This data is not available prior to the 2006/07 season.</p></span>
+        <span class="font-weight-bolder">Recoveries: <p class="font-weight-lighter">The total number of recoveries made by a player. This data is not available prior to the 2007/08 season.</p></span>
+        <span class="font-weight-bolder">Duels Won: <p class="font-weight-lighter">The total number of 1 on 1 duels won by a player. This data is not available prior to the 2006/07 season.</p></span>
+        <span class="font-weight-bolder">Duels Lost: <p class="font-weight-lighter">The total number of 1 on 1 duels lost by a player. This data is not available prior to the 2006/07 season.</p></span>
+        <span class="font-weight-bolder">Successful 50/50s: <p class="font-weight-lighter">The total number of 50/50 balls won by a player. This data is not available prior to the 2006/07 season.</p></span>
+        <span class="font-weight-bolder">Aeiral Battles Won: <p class="font-weight-lighter">The number of headers won by a player. This data is not available prior to the 2006/07 season.</p></span>
+        <span class="font-weight-bolder">Aeiral Battles Lost: <p class="font-weight-lighter">The number of headers lost by a player. This data is not available prior to the 2006/07 season.</p></span>
+        <span class="font-weight-bolder">Errors Leading to Goal: <p class="font-weight-lighter">The number of goals conceeded as a direct result of an error made by a player.</p></span>
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+        <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+    </div>
+
+    </div>
+</div>
+</div>
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-1"></div>
@@ -11,6 +72,7 @@
                     </div>
                     <div class="col-lg-7">
                         <h1 class="display-3 text-center">{{title}}</h1>
+                        <hr>
                         <p class="font-weight-light text-center">Appearances: {{appearances}} | Wins: {{wins}} | Losses: {{losses}}</p>
                         <p class="font-weight-light text-center">{{accolades}}</p>
                         <blockquote class="blockquote text-center">
@@ -27,13 +89,16 @@
     <div class="row">
         <div class="col-lg-1"></div>
         <div class="col-lg-10">
-            <p class="font-weight-light text-justified">* Team play and defensive data prior to the 2006/07 
-                season is not available. Attack data is limited.
+            <p class="font-weight-light text-justified">* Prior to the 2006/07 season. The Premier League only collected
+                 very limited data. For this reason attack data prior to 2006/07 is limited, and team play and defensive data
+                 only becomes available after this season. For more information all data and statistics included on this website
+                 see our Data Dictionary.
             </p>
             <p class="font-weight-light text-justified">Click the button below to download the raw data file containing all
                  of the data used for this profile in csv format.
             </p>
             <a class="btn btn-dark" href="{{ url_for('download', player=player) }}">Export Data <i class="fas fa-download"></i></a>
+            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#myModal">Data Dictionary  <i class="fas fa-book"></i></button>
         </div>
         <div class="col-lg-1"></div>
     </div>
@@ -98,7 +163,7 @@
                             <th>Goal Contributions/Match</th>
                             <th>Shots</th>
                             <th nowrap>Shots on Target</th>
-                            <th>Shooting Accuracy</th>
+                            <th>Shot Accuracy</th>
                             <th>Shot Conversion Rate</th>
                         </tr>
                     </thead>

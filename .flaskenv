@@ -1,2 +1,3 @@
 FLASK_APP=analysis_app.py
 FLASK_ENV=development
+BOKEH_ALLOW_WS_ORIGIN=127.0.0.1:5000
