@@ -22,9 +22,9 @@
             <img id="logo" src="{{ url_for('static', filename='images/epl_logo.jpg') }}" alt="logo" class="img-fluid">
         </a>
         <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="{{ url_for('home') }}"><i class="fas fa-home"></i> Home</a></li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"><i class="far fa-address-card"></i> Player Profile</a> 
+            <li class="nav-item main-nav-item"><a class="nav-link main-nav-link" href="{{ url_for('home') }}"><i class="fas fa-home"></i> Home</a></li>
+            <li class="nav-item main-nav-item dropdown">
+                <a class="nav-link main-nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"><i class="far fa-address-card"></i> Player Profile</a> 
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="{{ url_for('profile', player='frank_lampard') }}">Frank Lampard</a>
                     <a class="dropdown-item" href="{{ url_for('profile', player='steven_gerrard') }}">Steven Gerrard</a>
@@ -34,7 +34,7 @@
                     <a class="dropdown-item" href="{{ url_for('profile', player='xabi_alonso') }}">Xabi Alonso</a>
                 </div>
             </li>
-            <li class="nav-item"><a class="nav-link" href="{{ url_for('statistical_analysis') }}"><i class="fas fa-chart-line"></i> Statistical Analysis</a></li>
+            <li class="nav-item main-nav-item"><a class="nav-link main-nav-link" href="{{ url_for('statistical_analysis') }}"><i class="fas fa-chart-line"></i> Statistical Analysis</a></li>
         </ul>
     </nav>
     <div style="margin-top: 130px;"></div>

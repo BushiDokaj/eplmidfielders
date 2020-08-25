@@ -100,14 +100,3 @@ for player, years in players.items():
     table = pd.DataFrame(data, columns=stats, index=years)
     table['year'] = years
     table.to_csv(r'player_data\\'+player+'.csv', index=False)
-    table['name'] = player.split('-')[0] + ' ' + player.split('-')[1]
-    table['line_aplpha'] = 0.5
-    table['fill_alpha'] = 0.8
-    table['fill_color'] = colours[player]
-    if count == 0:
-        master = table.copy()
-        count += 1
-    else:
-        master = pd.concat([master, table])
-
-master.to_csv(r'player_data\\master_data.csv', index=False)
