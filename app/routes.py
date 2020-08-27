@@ -14,7 +14,7 @@ from threading import Thread
 from tornado.ioloop import IOLoop
 
 player_prof = None
-with open('app\player_profiles.json', 'r', encoding='utf-8') as prof_file:
+with open(r'player_profiles.json', 'r', encoding='utf-8') as prof_file:
     player_prof = json.load(prof_file)
 
 

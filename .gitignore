@@ -1,3 +1,4 @@
 /pma-env
 /__pycache__
 app/__pycache__/
+data/__pycache__/
