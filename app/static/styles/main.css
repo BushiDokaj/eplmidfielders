@@ -64,11 +64,8 @@ li:hover a.dash-link {
 }
 
 .top-border {
-    border-top-style: solid;
-    border-top-width: 5px;
-    border-image: linear-gradient(to right, #983cfd, #ff2882);
-    border-image-slice: 1;
-    padding-top: 2px;
+    background-image: linear-gradient(to right, #983cfd, #ff2882);
+    padding-top: 5px;
 }
 
 .des-stat {
