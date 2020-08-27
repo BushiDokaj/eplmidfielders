@@ -46,7 +46,7 @@ def bk_scatter(stat_one, stat_one_name, stat_two, stat_two_name, stat='goal_cont
         title="Comparison of " + stat_name + " Recorded in a Season",
         x_axis_label=stat_one_name,
         y_axis_label=stat_two_name,
-        tools='pan,zoom_in,zoom_out,save,reset',
+        tools='pan,zoom_in,zoom_out,reset',
         tooltips=TOOLTIPS,
         **PLOT_OPTIONS
     )
@@ -170,7 +170,7 @@ def bk_line(stat, stat_name):
         title="Comparison of " + stat_name + " Recorded in a Season",
         x_axis_label="Season",
         y_axis_label=stat_name,
-        tools='pan,zoom_in,zoom_out,save,reset',
+        tools='pan,zoom_in,zoom_out,reset',
         tooltips=TOOLTIPS,
         **PLOT_OPTIONS
     )
