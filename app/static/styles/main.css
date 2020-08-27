@@ -12,11 +12,30 @@
 }
 
 .dash-item-four {
-    width: 25%;
+    width: 24%;
 }
 
-.dash-item-two {
-    width: 50%;
+.dash-item-four:hover, .dash-item-three:hover {
+    background-color: #ff2882;
+    transition-duration: 0.3s;
+}
+
+.dash-item-four:active, .dash-item-three:active {
+    background-color: white;
+}
+
+.dash-item-four, .dash-item-three {
+    background-color: whitesmoke;
+    margin: 0.5%
+}
+
+li:hover a.dash-link {
+    color: snow;
+    transition-duration: 0.2s;
+}
+
+.dash-item-three {
+    width: 32.33%;
 }
 
 .smart-scroll{
@@ -44,7 +63,7 @@
     transition-duration: 0.5s
 }
 
-.card-text {
+.top-border {
     border-top-style: solid;
     border-top-width: 5px;
     border-image: linear-gradient(to right, #983cfd, #ff2882);

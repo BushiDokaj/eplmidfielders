@@ -1,0 +1,251 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{{resources}}
+{% endblock %}
+
+{% block content %}
+{{script}}
+
+<div class="contianer-fluid">
+    <div class="row mx-auto">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="jumbotron shadow">
+                <div>
+                    <h1 class="display-4 text-justify">Data Visualization Dashboard</h1>
+                    <hr>
+                    <p class="text-justify">Here some of the key data fields are presented visually using various graphs and plots to allow for better analysis and player comparison</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <br>
+    <div class="row mx-auto">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <p class="font-weight-light text-justify">* All of the graphs are responsive and allow you to zoom in/out and 
+                move the plot. You can also filter for which players you want to see on the graph. In the graphs
+                below, the dot size is proportional to the number of appearances the player made that season.
+            </p>
+            <p class="font-weight-light text-justify">* Prior to the 2006/07 season. The Premier League only collected
+                very limited data. For this reason attack data prior to 2006/07 is limited, and team play and defensive data
+                only becomes available after this season.
+            </p>
+            <p class="font-weight-light text-justified">Click the button below to download a csv file containing all
+                of the data used to create this dashboard.
+            </p>
+            <a class="btn btn-dark" href="{{ url_for('grand_exp') }}">Export Data <i class="fas fa-download"></i></a>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="row mx-auto" style="padding-bottom: 80px;">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <h1 class="text-center display-4">Attacking Data</h1>
+            <hr>
+            <br>
+            <h3 class="font-weight-lighter">Quick Insights</h3>
+            <div class="top-border p-3 row mx-auto">
+                <div class="col-1">
+                    <span class="far fa-futbol fa-2x" style="color: #496cc3; margin-top: 10%"></span>
+                </div>
+                <div class="col-11">
+                    <span class="text-justify font-weight-light">
+                    Frank Lampard has the best recorded goals, assists, and goal contributions with 18 assists
+                     in 2004/05, and 36 goal contributions and 22 goals in 2009/10.
+                    </span>
+                </div>
+            </div>
+            <hr>
+            <div class="p-3 row mx-auto">
+                <div class="col-1">
+                    <span class="far fa-futbol fa-2x" style="color: #98c2e8; margin-top: 10%"></span>
+                </div>
+                <div class="col-11">
+                    <span class="text-justify font-weight-light">
+                    Yaya Toure has the highest conversion rate at 31% in 2013/14. He scored 20 goals that season,
+                     his personal best and the second most of any midfielder on this list. 
+                    </span>
+                </div>
+            </div>
+            <br>
+            <ul class="nav nav-tabs p-1">
+                <li class="nav-item dash-item-four">
+                    <a class="nav-link dash-link active" data-toggle="tab" href="#goals">Goals</a>
+                </li>
+                <li class="nav-item dash-item-four">
+                    <a class="nav-link dash-link" data-toggle="tab" href="#assists">Assists</a>
+                </li>
+                <li class="nav-item dash-item-four">
+                    <a class="nav-link dash-link" data-toggle="tab" href="#gc">Goal Contributions</a>
+                </li>
+                <li class="nav-item dash-item-four">
+                    <a class="nav-link dash-link" data-toggle="tab" href="#shots">Shooting</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane container active" id="goals"> 
+                    <br>
+                    {{div.bk_goals}}
+                </div>
+                <div class="tab-pane container fade" id="assists">
+                    <br>
+                    {{div.bk_assists}}
+                </div>
+                <div class="tab-pane container fade" id="gc">
+                    <br>
+                    {{div.bk_gc}}
+                </div>
+                <div class="tab-pane container fade" id="shots">
+                    <br>
+                    {{div.bk_shots_cr}}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <br>
+    <br>
+    <div class="row mx-auto" style="padding-bottom: 80px;">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <h1 class="text-center display-4">Team Play Data</h1>
+            <hr>
+            <br>
+            <h3 class="font-weight-lighter">Quick Insights</h3>
+            <div class="top-border p-3 row mx-auto">
+                <div class="col-1">
+                    <span class="far fa-futbol fa-2x" style="color: #00a499; margin-top: 10%"></span>
+                </div>
+                <div class="col-11">
+                    <span class="text-justify font-weight-light">
+                    Steven Gerrard has the most long balls recorded in a single season, with 303 in 2012/13. He also 
+                    recorded 257 in the subsequent season.
+                    </span>
+                </div>
+            </div>
+            <hr>
+            <div class="p-3 row mx-auto">
+                <div class="col-1">
+                    <span class="far fa-futbol fa-2x" style="color: #4b3291; margin-top: 10%"></span>
+                </div>
+                <div class="col-11">
+                    <span class="text-justify font-weight-light">
+                    Xabi Alonso has two seasons in which he recorded more than 250 long balls: 2006/07 and 2008/09. The only 
+                    other player to record more than 250 balls in a season is Seven Gerrard.
+                    </span>
+                </div>
+            </div>
+            <hr>
+            <div class="p-3 row mx-auto">
+                <div class="col-1">
+                    <span class="far fa-futbol fa-2x" style="color: #98c2e8; margin-top: 10%"></span>
+                </div>
+                <div class="col-11">
+                    <span class="text-justify font-weight-light">
+                    Yaya Toure has the best passes per match (83 in 2014/15) and the best total passes completed 
+                    (2525 in 2012/13). Toure also has four season in which he recorded more than 2400 total passes and 70 passes per match.  
+                    </span>
+                </div>
+            </div>
+            <br>
+            <ul class="nav nav-tabs p-1">
+                <li class="nav-item dash-item-three">
+                    <a class="nav-link dash-link active" data-toggle="tab" href="#through">Through Balls</a>
+                </li>
+                <li class="nav-item dash-item-three">
+                    <a class="nav-link dash-link" data-toggle="tab" href="#long">Long Balls</a>
+                </li>
+                <li class="nav-item dash-item-three">
+                    <a class="nav-link dash-link" data-toggle="tab" href="#pass">Passing</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane container active" id="through">
+                    <br>
+                    {{div.bk_through}}
+                </div>
+                <div class="tab-pane container fade" id="long">
+                    <br>
+                    {{div.bk_long}}
+                </div>
+                <div class="tab-pane container fade" id="pass">
+                    <br>
+                    {{div.bk_passes}}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <br>
+    <br>    
+    <div class="row mx-auto" style="padding-bottom: 80px;">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <h1 class="text-center display-4">Defensive Data</h1>
+            <hr>
+            <br>
+            <h3 class="font-weight-lighter">Quick Insights</h3>
+            <div class="top-border p-3 row mx-auto">
+                <div class="col-1">
+                    <span class="far fa-futbol fa-2x" style="color: #fcb50b; margin-top: 10%"></span>
+                </div>
+                <div class="col-11">
+                    <span class="text-justify font-weight-light">
+                    N'Golo Kanté has three seasons in which he recovers the ball more than 270 times. His best 
+                    was in 2015/16 when he recorded 326 recoveries. 
+                    </span>
+                </div>
+            </div>
+            <hr>
+            <div class="p-3 row mx-auto">
+                <div class="col-1">
+                    <span class="far fa-futbol fa-2x" style="color: #fcb50b; margin-top: 10%"></span>
+                </div>
+                <div class="col-11">
+                    <span class="text-justify font-weight-light">
+                    In 2015/16 N'Golo Kanté recorded an astronomical 156 interceptions. The next best from any other player 
+                    is 67 from Steven Gerrard. Kanté also has two other season where he recorded more than 80 interceptions. 
+                    </span>
+                </div>
+            </div>
+            <br>
+            <ul class="nav nav-tabs p-1">
+                <li class="nav-item dash-item-four">
+                    <a class="nav-link dash-link active" data-toggle="tab" href="#recover">Recoveries</a>
+                </li>
+                <li class="nav-item dash-item-four">
+                    <a class="nav-link dash-link" data-toggle="tab" href="#int">Interceptions</a>
+                </li>
+                <li class="nav-item dash-item-four">
+                    <a class="nav-link dash-link" data-toggle="tab" href="#tackles">Tackles</a>
+                </li>
+                <li class="nav-item dash-item-four">
+                    <a class="nav-link dash-link" data-toggle="tab" href="#duels">Duels Won/Lost</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane container active" id="recover">
+                    <br>
+                    {{div.bk_recover}}
+                </div>
+                <div class="tab-pane container fade" id="int">
+                    <br>
+                    {{div.bk_intercept}}
+                </div>
+                <div class="tab-pane container fade" id="tackles">
+                    <br>
+                    {{div.bk_tackle_success}}
+                </div>
+                <div class="tab-pane container fade" id="duels">
+                    <br>
+                    {{div.bk_duels}}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>
+{% endblock %}

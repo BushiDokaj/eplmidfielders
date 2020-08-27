@@ -5,10 +5,10 @@ import pandas as pd
 import numpy as np
 import json
 from math import sqrt
-from data.data_visualizations import bk_goals, bk_assists, bk_through, bk_long, bk_recover, bk_intercept, bk_gc, bk_shots_cr, bk_tackle_success, bk_duels
-from data.data_aggregate import attack, team_play, defensive, summary_stats, descriptive
+from data.data_visualizations import bk_goals, bk_assists, bk_through, bk_long, bk_recover, bk_intercept, bk_gc, bk_shots_cr, bk_tackle_success, bk_duels, bk_passes
+from data.data_aggregate import attack, team_play, defensive, summary_stats, descriptive, grand_df, player_df
 from bokeh.server.server import Server
-from bokeh.embed import server_document
+from bokeh.embed import server_document, components
 from bokeh.resources import INLINE
 from threading import Thread
 from tornado.ioloop import IOLoop
@@ -48,52 +48,90 @@ def profile(player):
                             team_play_data=team_play_data.to_dict('record'), defensive_data=defensive_data.to_dict('record'),
                             desc_stats=desc_stats)
 
-@app.route('/statistical_analysis', methods=['GET'])
-def statistical_analysis():
-    script_goals = server_document('http://localhost:5006/bk_goals')
-    script_assists = server_document('http://localhost:5006/bk_assists')
-    script_long = server_document('http://localhost:5006/bk_long')
-    script_through = server_document('http://localhost:5006/bk_through')
-    script_recover = server_document('http://localhost:5006/bk_recover')
-    script_intercept = server_document('http://localhost:5006/bk_intercept')
-    script_gc = server_document('http://localhost:5006/bk_gc')
-    script_shots_cr = server_document('http://localhost:5006/bk_shots_cr')
-    script_tackle_success = server_document('http://localhost:5006/bk_tackle_success')
-    script_duels = server_document('http://localhost:5006/bk_duels')
+@app.route('/vis_dash', methods=['GET'])
+def vis_dash():
+
+    apps = {'bk_goals': bk_goals(),
+            'bk_assists': bk_assists(),
+            'bk_through': bk_through(),
+            'bk_long': bk_long(),
+            'bk_recover': bk_recover(),
+            'bk_intercept':bk_intercept(),
+            'bk_gc':bk_gc(),
+            'bk_shots_cr':bk_shots_cr(),
+            'bk_tackle_success':bk_tackle_success(),
+            'bk_duels':bk_duels(),
+            'bk_passes':bk_passes()
+            }
+
+    script, div = components(apps)
+
     resources = INLINE.render()
-    return render_template("stats_analysis.html", script_goals=Markup(script_goals),
-                            script_assists=Markup(script_assists), script_long=Markup(script_long),
-                            script_through=Markup(script_through), script_recover=Markup(script_recover),
-                            script_intercept=Markup(script_intercept), script_gc=Markup(script_gc),
-                            script_shots_cr=Markup(script_shots_cr), script_tackle_success=Markup(script_tackle_success),
-                            script_duels=Markup(script_duels), template="Flask", resources=Markup(resources))
 
-def bk_worker():
-    # Can't pass num_procs > 1 in this configuration. If you need to run multiple
-    # processes, see e.g. flask_gunicorn_embed.py
-    apps = {'/bk_goals': bk_goals,
-            '/bk_assists': bk_assists,
-            '/bk_through': bk_through,
-            '/bk_long': bk_long,
-            '/bk_recover': bk_recover,
-            '/bk_intercept':bk_intercept,
-            '/bk_gc':bk_gc,
-            '/bk_shots_cr':bk_shots_cr,
-            '/bk_tackle_success':bk_tackle_success,
-            '/bk_duels':bk_duels}
-    server = Server(apps, io_loop=IOLoop(), allow_websocket_origin=["localhost:5006"])
-    server.start()
-    server.io_loop.start()
+    for key, value in div.items():
+        div[key] = Markup(value)
 
-Thread(target=bk_worker).start()
+    return render_template("vis_dash.html",  template="Flask", resources=Markup(resources), script=Markup(script), div=div)
 
 @app.route('/download/<player>', methods=["GET"])
 def download(player):
-    file = player_prof[player][3]
+    name = player_prof[player][0].replace(' ', '-')
 
-    player_data = pd.read_csv('player_data/'+file)
+    player_data = player_df(name)
     
     resp = make_response(player_data.to_csv())
     resp.headers["Content-Disposition"] = "attachment; filename=" + player + ".csv"
     resp.headers["Content-Type"] = "text/csv"
     return resp
+
+@app.route('/grand_exp', methods=["GET"])
+def grand_exp():
+    df = grand_df()
+    resp = make_response(df.to_csv())
+    resp.headers["Content-Disposition"] = "attachment; filename=grand_data_file.csv"
+    resp.headers["Content-Type"] = "text/csv"
+    return resp
+
+
+#################################################
+## Previous code used for embedding bokeh server on flask 
+
+# script_goals = server_document('http://localhost:5006/bk_goals')
+# script_assists = server_document('http://localhost:5006/bk_assists')
+# script_long = server_document('http://localhost:5006/bk_long')
+# script_through = server_document('http://localhost:5006/bk_through')
+# script_recover = server_document('http://localhost:5006/bk_recover')
+# script_intercept = server_document('http://localhost:5006/bk_intercept')
+# script_gc = server_document('http://localhost:5006/bk_gc')
+# script_shots_cr = server_document('http://localhost:5006/bk_shots_cr')
+# script_tackle_success = server_document('http://localhost:5006/bk_tackle_success')
+# script_duels = server_document('http://localhost:5006/bk_duels')
+# script_passes = server_document('http://localhost:5006/bk_passes')
+
+# script_goals=Markup(script_goals),
+# script_assists=Markup(script_assists), script_long=Markup(script_long),
+# script_through=Markup(script_through), script_recover=Markup(script_recover),
+# script_intercept=Markup(script_intercept), script_gc=Markup(script_gc),
+# script_shots_cr=Markup(script_shots_cr), script_tackle_success=Markup(script_tackle_success),
+# script_duels=Markup(script_duels), script_passes=Markup(script_passes),
+
+
+# def bk_worker():
+#     # Can't pass num_procs > 1 in this configuration. If you need to run multiple
+#     # processes, see e.g. flask_gunicorn_embed.py
+#     apps = {'/bk_goals': bk_goals,
+#             '/bk_assists': bk_assists,
+#             '/bk_through': bk_through,
+#             '/bk_long': bk_long,
+#             '/bk_recover': bk_recover,
+#             '/bk_intercept':bk_intercept,
+#             '/bk_gc':bk_gc,
+#             '/bk_shots_cr':bk_shots_cr,
+#             '/bk_tackle_success':bk_tackle_success,
+#             '/bk_duels':bk_duels,
+#             '/bk_passes':bk_passes}
+#     server = Server(apps, io_loop=IOLoop(), allow_websocket_origin=["localhost:5006"])
+#     server.start()
+#     server.io_loop.start()
+
+# Thread(target=bk_worker).start()

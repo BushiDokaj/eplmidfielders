@@ -108,3 +108,39 @@ def descriptive(file):
 
     return desc_stats
 
+
+def combined(data):
+    players = ["Frank-Lampard", "Ngolo-Kante", "Paul-Scholes", "Steven-Gerrard", "Xabi-Alonso", "Yaya-Toure"]
+    funcs = {'attack': attack, 'team_play': team_play, 'defensive': defensive}
+    frames = []
+
+    for player in players:
+        df = funcs[data](player+'.csv')
+        name = player.replace('-', ' ')
+        df['name'] = name
+        frames.append(df)
+
+    result = pd.concat(frames)
+
+    return result
+
+def grand_df():
+    players = ["Frank-Lampard", "Ngolo-Kante", "Paul-Scholes", "Steven-Gerrard", "Xabi-Alonso", "Yaya-Toure"]
+    frames = []
+
+    for player in players:
+        player_df = pd.concat([attack(player+'.csv'), team_play(player+'.csv'), defensive(player+'.csv')], axis=1)
+        name = player.replace('-', ' ')
+        player_df['name'] = name
+        frames.append(player_df)   
+
+    result = pd.concat(frames)
+    result = result.loc[:,~result.columns.duplicated()] 
+
+    return result
+
+def player_df(player):
+    player_df = pd.concat([attack(player+'.csv'), team_play(player+'.csv'), defensive(player+'.csv')], axis=1)
+    player_df = player_df.loc[:,~player_df.columns.duplicated()] 
+    
+    return player_df

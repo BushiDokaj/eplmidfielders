@@ -1,5 +1,0 @@
-attrs:
-    Figure:
-        toolbar_location: right
-    Grid:
-        grid_line_dash: [6, 4]
