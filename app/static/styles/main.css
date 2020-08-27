@@ -69,6 +69,9 @@ li:hover a.dash-link {
     border-image: linear-gradient(to right, #983cfd, #ff2882);
     border-image-slice: 1;
     padding-top: 2px;
+    border-bottom-style: hidden;
+    border-left-style: hidden;
+    border-right-style: hidden;
 }
 
 .des-stat {
