@@ -64,7 +64,7 @@ li:hover a.dash-link {
 }
 
 .top-border {
-    background-image: linear-gradient(to right, #983cfd, #ff2882);
+    background: linear-gradient(to right, #983cfd, #ff2882);
     padding-top: 5px;
 }
 
